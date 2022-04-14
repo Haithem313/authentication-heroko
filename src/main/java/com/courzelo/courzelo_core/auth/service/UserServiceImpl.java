@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
 		user.setModifiedDate(now);
 		user.setEnabled(false);
 		String token = RandomString.make(30);
-		String link = "http://localhost:4200/reset?token=" + token;
+		String link = "http://localhost:4200/confirmEmail?token=" + token;
 		user.setRegisterToken(token);
 		try {
 			sendEmail(user.getEmail(), link);
